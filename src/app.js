@@ -2,18 +2,30 @@ const express = require("express")
 
 const app = express();
 
-app.use("/hello",(req,res)=>{
-    res.send("Hello hello hello for the server test!");
-})
+// app.use("/",(req,res)=>{
+//     res.send("Hello Kuvar kaushal!");
+// });
+// app.use("/user",(req,res)=>{
+//     res.send("HAHAHAAHAHAAH");
+// });
+app.get("/user",(req,res)=>{
+    res.send({firstName:"kuvar",lastName:"patel",email:"xyz@gmail.com"});
+});
 
-app.use("/test",(req,res)=>{
-    res.send("Hello for the server test!");
-})
+app.post("/user",(req,res)=>{
+    res.send("Data are saved");
+});
+app.delete("/user",(req,res)=>{
+    res.send("deleted the data");
+});
+// app.use("/hello",(req,res)=>{
+//     res.send("Hello hello hello !");
+// });
 
-app.use("/",(req,res)=>{
-    res.send("Hello for the server!");
-})
+// app.use("/test",(req,res)=>{
+//     res.send("Hello for the server test!");
+// });
 
 app.listen(3000,()=>{
     console.log("this is my server......");
-})
+});
